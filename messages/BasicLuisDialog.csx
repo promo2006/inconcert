@@ -20,7 +20,6 @@ public class BasicLuisDialog : LuisDialog<object>
         await context.PostAsync($"You have reached the none intent. You said: {result.Query}"); //
         context.Wait(MessageReceived);
     }
-    //Test
 
     // Go to https://luis.ai and create a new intent, then train/publish your luis app.
     // Finally replace "MyIntent" with the name of your newly created intent in the following handler
