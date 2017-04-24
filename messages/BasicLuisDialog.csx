@@ -29,4 +29,19 @@ public class BasicLuisDialog : LuisDialog<object>
         await context.PostAsync($"You have reached the MyIntent intent. You said: {result.Query}"); //
         context.Wait(MessageReceived);
     }
+    [LuisIntent("saludos")]
+    public async Task Saludos(IDialogContext context, LuisResult result)
+    {
+        await context.PostAsync("Hola, ¿cómo estas?"); //
+        context.Wait(MessageReceived);
+    }
+    [LuisIntent("clima")]
+    public async Task Clima(IDialogContext context, LuisResult result)
+    {
+        //var jss = new JavaScriptSerializer();
+        //var dict = jss.DeserializeObject<Activity>(result);
+
+        await context.PostAsync("You're asked for weather");
+        context.Wait(MessageReceived);
+    }
 }
